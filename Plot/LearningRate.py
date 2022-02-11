@@ -1,5 +1,5 @@
 import numpy
-import pyplotlib
+import matplotlib
 
 # 学習率を描画
 def Draw(train = [], valid = [], range = 0, xscale = "log", xlabel = "", ylabel = ""):
