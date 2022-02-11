@@ -1,2 +1,1 @@
-import Plot
-import LearningRate
+from LearningRate import *
