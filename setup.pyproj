@@ -22,10 +22,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Plot\learning_rate.py">
+    <Compile Include="plot\learning_rate.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Plot\__init__.py">
+    <Compile Include="plot\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="setup.py" />
@@ -42,7 +42,7 @@
     </Interpreter>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Plot\" />
+    <Folder Include="plot\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
