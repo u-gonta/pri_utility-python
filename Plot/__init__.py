@@ -1,1 +1,1 @@
-from LearningRate import *
+from . import LearningRate
