@@ -25,7 +25,7 @@
     <Compile Include="Plot\LearningRate.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="__init__.py">
+    <Compile Include="Plot\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="setup.py" />
