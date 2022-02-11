@@ -25,6 +25,12 @@
     <Compile Include="setup.py" />
     <Compile Include="utility\plot\learning_rate.py" />
     <Compile Include="utility\plot\__init__.py" />
+    <Compile Include="utility\prepara\data.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utility\prepara\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="utility\__init__.py" />
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="utility\" />
+    <Folder Include="utility\prepara\" />
     <Folder Include="utility\plot\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
