@@ -1,4 +1,4 @@
 import matplotlib
 import numpy
 
-from . import LearningRate
+from . import learning_rate

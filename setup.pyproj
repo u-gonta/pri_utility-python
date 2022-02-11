@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Plot\LearningRate.py">
+    <Compile Include="Plot\learning_rate.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Plot\__init__.py">
