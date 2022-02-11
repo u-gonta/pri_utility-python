@@ -10,4 +10,5 @@ setup(
     , classifiers = ["Development Status :: 1 - Planning"]
     , keywords = "utility"
     , install_requires = ["numpy", "matplotlib"]
+    , packages = find_packages()
     )
