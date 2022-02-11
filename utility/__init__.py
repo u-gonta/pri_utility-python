@@ -1,4 +1,1 @@
-import matplotlib
-import numpy
-
-from utility.plot import *
+from .plot import *
