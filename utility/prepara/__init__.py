@@ -1,3 +1,1 @@
-import pandas
-
-from . import *
+__all__ = ["data"]

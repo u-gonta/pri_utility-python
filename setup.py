@@ -9,6 +9,6 @@ setup(
     , license = "MIT"
     , classifiers = ["Development Status :: 1 - Planning"]
     , keywords = "utility"
-    , install_requires = ["numpy", "matplotlib"]
+    , install_requires = ["numpy", "pandas", "matplotlib"]
     , packages = find_packages()
     )
