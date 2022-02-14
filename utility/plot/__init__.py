@@ -1,1 +1,1 @@
-from .learning_rate import draw
+from .learning_rate import draw as draw_learning_rate

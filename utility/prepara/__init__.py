@@ -1,1 +1,1 @@
-from .data import load
+from .data import load as load_data
