@@ -1,7 +1,7 @@
 import pandas
 
 # 識別IDのタイトル
-#ID_TITLE = "id"
+ID_TITLE = "id"
 
 # ファイルを読み込みデータに変換
 def load(training, test, separate = "\t", identification = 0, purpose = ""):
@@ -14,8 +14,8 @@ def load(training, test, separate = "\t", identification = 0, purpose = ""):
     id_test = test.iloc[:, [identification]]
 
     # 識別IDのヘッダを更新
-    id_train.columns = ["id"]
-    id_test.columns = ["id"]
+    id_train.columns = [ID_TITLE]
+    id_test.columns = [ID_TITLE]
 
     # 識別IDと目的変数を削除
     x_train = train.drop(columns = [train.columns[identification], purpose])
