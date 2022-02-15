@@ -38,11 +38,11 @@ def draw(
 
     if scale_x:
         # スケールをxscaleに合わせて変更
-        matplotlib.pyplot.xscale(scale_x)
+        matplotlib.pyplot.xscale(x_scale)
 
     # 軸ラベルおよび凡例の指定
-    matplotlib.pyplot.xlabel(label_x)
-    matplotlib.pyplot.ylabel(label_y)
+    matplotlib.pyplot.xlabel(x_label)
+    matplotlib.pyplot.ylabel(y_label)
 
     # 凡例
     matplotlib.pyplot.legend(loc = "lower right")
