@@ -1,1 +1,6 @@
-from .data import load as load_data
+from utility.prepara import data
+
+__all__ = [
+    "ID_TITLE"
+    , "data"
+]
