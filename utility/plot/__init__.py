@@ -1,5 +1,5 @@
-from utility.plot.learning_rate import draw as draw_learning_rate
+from utility.plot.learning_rate import learning_rate
 
 __all__ = [
-    "draw_learning_rate"
+    "learning_rate"
 ]

@@ -1,7 +1,5 @@
-from utility.prepara.data import ID_TITLE
-from utility.prepara.data import load as load_prepara
+from utility.prepara.data import data
 
 __all__ = [
-    "ID_TITLE"
-    , "load_prepara"
+    "data"
 ]
