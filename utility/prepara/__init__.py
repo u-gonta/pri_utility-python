@@ -1,5 +1,7 @@
-from prepara.data import data
+from prepara.data import (
+    load
+)
 
 __all__ = [
-    "data"
+    "load"
 ]
