@@ -1,7 +1,8 @@
 from utility import plot, prepara
 
-import utility.plot.learning_rate
-import utility.prepara.data
+from utility.plot import learning_rate
+
+from utility.prepara import data
 
 __all__ = [
     "plot"
