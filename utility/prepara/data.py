@@ -4,7 +4,14 @@ import pandas
 ID_TITLE = "id"
 
 # ファイルを読み込みデータに変換
-def load(training, test, separate = "\t", identification = 0, purpose = ""):
+def load(
+    training
+    , test
+    , separate = "\t"
+    , identification = 0
+    , purpose = ""
+):
+
     # ファイル読み込み
     train = pandas.read_csv(training, sep = separate)
     test = pandas.read_csv(test, sep = separate)

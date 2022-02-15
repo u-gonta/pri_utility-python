@@ -2,7 +2,15 @@ import numpy
 import matplotlib
 
 # 学習率を描画
-def draw(training, validation, range = 0, x_scale = "log", x_label = "", y_label = ""):
+def draw(
+    training
+    , validation
+    , range = 0
+    , x_scale = "log"
+    , x_label = ""
+    , y_label = ""
+):
+
     # 学習データに対するスコアの平均±標準偏差を算出
     train_mean = numpy.mean(training, axis = 1)
     train_std  = numpy.std(training, axis = 1)

@@ -1,8 +1,7 @@
-from utility.prepara import data
-from utility.prepara.data import ID_TITLE, load
+from utility.prepara.data import ID_TITLE
+from utility.prepara.data import load as load_prepara
 
 __all__ = [
-    "data"
-    , "ID_TITLE"
-    , "load"
+    "ID_TITLE"
+    , "load_prepara"
 ]
