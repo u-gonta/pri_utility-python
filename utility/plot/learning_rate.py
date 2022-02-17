@@ -36,7 +36,7 @@ def draw(
     matplotlib.pyplot.plot(range, valid_center, color = "green", linestyle = "--", marker = "o", markersize = 5, label = "validation score")
     matplotlib.pyplot.fill_between(range, valid_high, valid_low, alpha = 0.15, color = "green")
 
-    if scale_x:
+    if x_scale:
         # スケールをxscaleに合わせて変更
         matplotlib.pyplot.xscale(x_scale)
 
