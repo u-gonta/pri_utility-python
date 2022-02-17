@@ -1,5 +1,5 @@
 import numpy
-import matplotlib
+from matplotlib import pyplot
 
 # 学習率を描画
 def draw(
@@ -26,24 +26,24 @@ def draw(
     valid_low = valid_mean - valid_std
     
     # 描画エリアを閉じる
-    matplotlib.pyplot.close()
+    pyplot.close()
 
     # 学習データをプロット
-    matplotlib.pyplot.plot(range, train_center, color = "blue", marker = "o", markersize = 5, label = "training score")
-    matplotlib.pyplot.fill_between(range, train_high, train_low, alpha = 0.15, color = "blue")
+    pyplot.plot(range, train_center, color = "blue", marker = "o", markersize = 5, label = "training score")
+    pyplot.fill_between(range, train_high, train_low, alpha = 0.15, color = "blue")
 
     # 検証データをプロット
-    matplotlib.pyplot.plot(range, valid_center, color = "green", linestyle = "--", marker = "o", markersize = 5, label = "validation score")
-    matplotlib.pyplot.fill_between(range, valid_high, valid_low, alpha = 0.15, color = "green")
+    pyplot.plot(range, valid_center, color = "green", linestyle = "--", marker = "o", markersize = 5, label = "validation score")
+    pyplot.fill_between(range, valid_high, valid_low, alpha = 0.15, color = "green")
 
     if x_scale:
         # スケールをxscaleに合わせて変更
-        matplotlib.pyplot.xscale(x_scale)
+        pyplot.xscale(x_scale)
 
     # 軸ラベルおよび凡例の指定
-    matplotlib.pyplot.xlabel(x_label)
-    matplotlib.pyplot.ylabel(y_label)
+    pyplot.xlabel(x_label)
+    pyplot.ylabel(y_label)
 
     # 凡例
-    matplotlib.pyplot.legend(loc = "lower right")
+    pyplot.legend(loc = "lower right")
 
