@@ -7,7 +7,7 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import cross_validate
 
 # 分類のモデルを評価
-def model_classifier(
+def classifier(
     x
     , y
     , max_iter = 1000
@@ -16,6 +16,7 @@ def model_classifier(
     , cv = StratifiedKFold(shuffle = True)
 ):
 
+    # 結果
     results = {}
 
     # 目的変数をラベル化
