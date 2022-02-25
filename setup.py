@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "utility"
-    , version = "0.0.1"
+    , version = "0.0.2"
     , description = "Python用のライブラリ"
     , long_description = "共通して使用できる関数群"
     , author = "kazu.kara"
