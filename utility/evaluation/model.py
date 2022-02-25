@@ -42,6 +42,7 @@ def classifier(
     for (name, estimator) in estimators:
         try:
             model = None
+            signature = inspect.signature(estimator)
             if signature.parameters.get("max_iter") != None:
                 if signature.parameters.get("early_stopping") != None:
                     model = estimator(max_iter = max_iter, early_stopping = early_stopping)
