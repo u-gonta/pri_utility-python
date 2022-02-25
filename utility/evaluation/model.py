@@ -33,7 +33,7 @@ def classifier(
     # モデルを追加
     estimators.append(("xgboost", xgboost.XGBClassifier))
     estimators.append(("lightgbm", lightgbm.LGBMClassifier))
-    estimators.append(("catboost", catboost.CatBoostCalssifier))
+    estimators.append(("catboost", catboost.CatBoostClassifier))
 
     # 早期打ち切りを設定
     lightgbm.early_stopping(early_stopping)
