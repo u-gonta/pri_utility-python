@@ -23,6 +23,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="setup.py" />
+    <Compile Include="utility\evaluation\model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utility\evaluation\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="utility\plot\learning_rate.py" />
     <Compile Include="utility\plot\__init__.py" />
     <Compile Include="utility\prepara\data.py">
@@ -46,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="utility\" />
+    <Folder Include="utility\evaluation\" />
     <Folder Include="utility\prepara\" />
     <Folder Include="utility\plot\" />
   </ItemGroup>

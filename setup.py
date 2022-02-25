@@ -9,6 +9,8 @@ setup(
     , license = "MIT"
     , classifiers = ["Development Status :: 1 - Planning"]
     , keywords = "utility"
-    , install_requires = ["numpy", "pandas", "matplotlib"]
+    , install_requires = [
+            "numpy", "pandas", "matplotlib", "sklearn"
+            , "xgboost", "lightgbm", "catboost"]
     , packages = find_packages()
     )
