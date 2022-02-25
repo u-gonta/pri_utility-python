@@ -26,7 +26,7 @@ def classifier(
 
     # 目的変数をラベル化
     encoder = LabelEncoder()
-    label_train = encoder.fit_transform(y)
+    label = encoder.fit_transform(y)
 
     # モデルの候補
     estimators = utils.all_estimators(type_filter = "classifier")
@@ -63,7 +63,7 @@ def classifier(
             fit_params = None
             if name == "xgboost" or name == "lightgbm" or name == "catboost":
                 fit_params = {}
-                fit_params["eval_set"] = [(x_train, label_train)]
+                fit_params["eval_set"] = [(x, label)]
                 fit_params["verbose"] = 0
 
                 if name == "xgboost":
@@ -75,7 +75,7 @@ def classifier(
 
             # クロスバリデーションで評価指標を算出
             scores = cross_validate(model
-                                    , X = x_train, y = label_train
+                                    , X = x, y = label
                                     , scoring = scorings
                                     , cv = cv
                                     , n_jobs = -1
