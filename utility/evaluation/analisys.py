@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import validation_curve
 from sklearn.model_selection import cross_validate
 from sklearn.model_selection import StratifiedKFold
-from pandas import DataFrame
+from pandas import Series
 from matplotlib import pyplot
 
 import utility
@@ -14,6 +14,8 @@ import utility
 # データを分析
 def classifier(
     model
+    , x
+    , y
     , cv_params = { "learning_rate" : [0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0]
         , "subsample" : [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
         , "min_weight_fraction_leaf" : [0, 0.1, 0.2, 0.3, 0.4, 0.5]
@@ -32,9 +34,6 @@ def classifier(
     , cv = StratifiedKFold(shuffle = True)
     , directory = "."
 ):
-
-    # データを準備
-    id_train, x, y, id_test, x_test = prepara_data()
 
     # 目的変数をラベル化
     encoder = LabelEncoder()
@@ -73,7 +72,7 @@ def classifier(
     pyplot.close()
 
     # 特徴量の重要度を取得
-    importances = pandas.Series(data = model.feature_importances_, index = x.columns)
+    importances = Series(data = model.feature_importances_, index = x.columns)
     for importance in importances.items():
         print(importance[0] + ",{:.6f}".format(importance[1]), end = "")
 
