@@ -23,7 +23,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="setup.py" />
-    <Compile Include="utility\evaluation\analisys.py">
+    <Compile Include="utility\analisys\data.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utility\analisys\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="utility\evaluation\model.py">
@@ -56,6 +59,7 @@
   <ItemGroup>
     <Folder Include="utility\" />
     <Folder Include="utility\evaluation\" />
+    <Folder Include="utility\analisys\" />
     <Folder Include="utility\prepara\" />
     <Folder Include="utility\plot\" />
   </ItemGroup>
