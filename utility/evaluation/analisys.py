@@ -1,6 +1,7 @@
 import pandas
 import numpy
 import sklearn
+import matplotlib
 
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import validation_curve
