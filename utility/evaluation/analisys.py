@@ -12,7 +12,7 @@ from matplotlib import pyplot
 import utility
 
 # データを分析
-def analisys(
+def classifier(
     model
     , cv_params = { "learning_rate" : [0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0]
         , "subsample" : [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
