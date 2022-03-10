@@ -87,7 +87,7 @@ def classifier(
                 target = "test_" + scoring
                 message += "," + scoring + ":"
                 message += " ".join([format(score, ".6f") for score in scores[target]])
-                message += ",平均 {:.6f}".format(scores[target].mean())
+                message += ",平均:{.6f}".format(scores[target].mean())
             print(message, end = "")
 
         except Exception as e:
