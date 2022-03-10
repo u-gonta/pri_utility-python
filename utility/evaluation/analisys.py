@@ -1,13 +1,13 @@
-import pandas
 import numpy
+import pandas
 import sklearn
 import matplotlib
 
+from pandas import Series
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import validation_curve
 from sklearn.model_selection import cross_validate
 from sklearn.model_selection import StratifiedKFold
-from pandas import Series
 from matplotlib import pyplot
 
 #import utility.plot.learning_rate
