@@ -1,4 +1,5 @@
 import numpy
+
 from matplotlib import pyplot
 
 # 学習率を描画
