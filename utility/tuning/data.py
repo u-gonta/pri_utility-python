@@ -84,6 +84,9 @@ def optuna_classifier(
     global _cv
     _cv = cv
 
+    # モデルのパラメータを更新
+    global _model_params
+
     # ベイズ最適化を実行
     study = optuna.create_study(direction = "maximum", sampler = optuna.samplers.TPESampler(seed = seed))
     study.optimize(objective, n_trials = trials)
@@ -92,7 +95,7 @@ def optuna_classifier(
     best_param = study.best_trial.params
     best_score = study.best_trial.values
     print("最適パラメータ:{best_param}", end = "")
-    print("最適スコア:{best_score}"), end = "")
+    print("最適スコア:{best_score}", end = "")
 
     # 最適パラメータをモデルにセット
     _model.set_params(**best_param)
