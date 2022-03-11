@@ -30,11 +30,35 @@ _cv = None
 # モデルのパラメータ
 _model_params = None
 
-# 評価指標を算出
-def objective(trial):
+# 評価指標を算出(Optuna)
+def optuna_objective(trial):
+    # モデルのパラメータを更新
+    global _model_params
+    model_params = {}
+    for params in model_params:
+        # パラメータの名称
+        item = params[0]
+        # パラメータの下限値
+        lower = params[1]
+        # パラメータの上限値
+        upper = params[2]
+        suggest = None
+        if type(lower) is int or type(upper) is int:
+            # int型
+            suggest = trial.suggest_int(item, lower, upper)
+        elif type(lower)is float or type(upper) is float:
+            # float型
+            suggest = trial.suggest_float(item, lower, upper)
+        else:
+            # 型不明
+            continue
+
+        # パラメータを登録
+        model_params[item] = suggest
+
     # モデルにパラメータを適応
     global _model
-    _model.set_params(**_model_params)
+    _model.set_params(**model_params)
 
     # クロスバリデーション
     global _x
@@ -86,30 +110,11 @@ def optuna_classifier(
 
     # モデルのパラメータを更新
     global _model_params
-    for params in model_params:
-        # パラメータの名称
-        item = params[0]
-        # パラメータの下限値
-        lower = params[1]
-        # パラメータの上限値
-        upper = params[2]
-        suggest = None
-        if type(lower) is int or type(upper) is int:
-            # int型
-            suggest = trial.suggest_int(item, lower, upper)
-        elif type(lower)is float or type(upper) is float:
-            # float型
-            suggest = trial.suggest_float(item, lower, upper)
-        else:
-            # 型不明
-            continue
-
-        # パラメータを登録
-        _model_params[item] = suggest
+    _model_params = model_params
 
     # ベイズ最適化を実行
     study = optuna.create_study(direction = "maximum", sampler = optuna.samplers.TPESampler(seed = seed))
-    study.optimize(objective, n_trials = trials)
+    study.optimize(optuna_objective, n_trials = trials)
 
     # 最適のパラメータを表示
     best_param = study.best_trial.params
