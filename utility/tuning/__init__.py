@@ -1,5 +1,5 @@
-from utility.tuning.data import classifier_optuna as tuning_classifier_optuna
+from utility.tuning.data import optuna_classifier as optuna_classifier
 
 __all__ = [
-    "tuning_classifier_optuna"
+    "optuna_classifier"
 ]

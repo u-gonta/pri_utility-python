@@ -46,7 +46,7 @@ def objective(trial):
     return scores["test_score"].mean()
 
 # チューニング(Optuna)
-def classifier_optuna(
+def optuna_classifier(
     model
     , x
     , y
