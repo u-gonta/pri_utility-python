@@ -4,6 +4,7 @@ import sklearn
 import matplotlib
 import optuna
 
+from pandas import Series
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import cross_validate
 from sklearn.model_selection import StratifiedKFold
