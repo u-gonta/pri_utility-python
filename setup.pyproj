@@ -26,6 +26,9 @@
     <Compile Include="utility\analisys\data.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="utility\analisys\gradient_boosting.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="utility\analisys\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -41,6 +44,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="utility\prepara\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utility\tuning\data.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utility\tuning\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="utility\__init__.py" />
@@ -60,6 +69,7 @@
     <Folder Include="utility\" />
     <Folder Include="utility\evaluation\" />
     <Folder Include="utility\analisys\" />
+    <Folder Include="utility\tuning\" />
     <Folder Include="utility\prepara\" />
     <Folder Include="utility\plot\" />
   </ItemGroup>

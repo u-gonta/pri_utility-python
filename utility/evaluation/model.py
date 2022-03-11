@@ -78,7 +78,6 @@ def classifier(
                                     , X = x, y = label
                                     , scoring = scorings
                                     , cv = cv
-                                    , n_jobs = -1
                                     , fit_params = fit_params)
             results[name] = scores
 
