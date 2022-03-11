@@ -78,6 +78,7 @@ def optuna_classifier(
     , fit_params
     , scoring = "neg_log_loss"
     , cv = StratifiedKFold(shuffle = True)
+    , direction = "maximize"
     , seed = 42
     , trials = 600
     , directory = "."
@@ -113,7 +114,7 @@ def optuna_classifier(
     _model_params = model_params
 
     # ベイズ最適化を実行
-    study = optuna.create_study(direction = "maximum", sampler = optuna.samplers.TPESampler(seed = seed))
+    study = optuna.create_study(direction = direction, sampler = optuna.samplers.TPESampler(seed = seed))
     study.optimize(optuna_objective, n_trials = trials)
 
     # 最適のパラメータを表示
