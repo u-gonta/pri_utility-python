@@ -10,7 +10,7 @@ from sklearn.model_selection import cross_validate
 from sklearn.model_selection import StratifiedKFold
 from matplotlib import pyplot
 
-import utility.plot.learning_rate
+from utility.plot.learning_rate import draw as draw_learning_rate
 
 # GradientBoostingClassifierのパラメータ
 PARAM_GBC = {
@@ -58,8 +58,8 @@ def classifier(
                                                         , scoring = scoring
                                                         , cv = cv)
 
-            # 学習率のグラフを描画
-            learning_rate.draw(train_score, valid_score
+            # 学習率のグラフを描画            
+            draw_learning_rate(train_score, valid_score
                                 , range = range, x_scale = param_scales[name]
                                 , x_label = name, y_label = scoring)
             # 学習率のグラフを画像で保存
