@@ -73,7 +73,7 @@ def optuna_classifier(
     _x = x
 
     # 目的変数を更新
-    global y
+    global _y
     _y = label
 
     # 評価の方法を更新
