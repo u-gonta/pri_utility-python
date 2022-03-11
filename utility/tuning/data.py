@@ -87,20 +87,24 @@ def optuna_classifier(
     # モデルのパラメータを更新
     global _model_params
     for params in model_params:
+        # パラメータの名称
         item = params[0]
+        # パラメータの下限値
         lower = params[1]
+        # パラメータの上限値
         upper = params[2]
         suggest = None
         if type(lower) is int or type(upper) is int:
-            // int型
+            # int型
             suggest = trial.suggest_int(item, lower, upper)
         elif type(lower)is float or type(upper) is float:
-            // float型
+            # float型
             suggest = trial.suggest_float(item, lower, upper)
         else:
-            // 型不明
+            # 型不明
             continue
 
+        # パラメータを登録
         _model_params[item] = suggest
 
     # ベイズ最適化を実行
