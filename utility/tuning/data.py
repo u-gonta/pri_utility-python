@@ -86,6 +86,22 @@ def optuna_classifier(
 
     # モデルのパラメータを更新
     global _model_params
+    for params in model_params:
+        item = params[0]
+        lower = params[1]
+        upper = params[2]
+        suggest = None
+        if type(lower) is int or type(upper) is int:
+            // int型
+            suggest = trial.suggest_int(item, lower, upper)
+        elif type(lower)is float or type(upper) is float:
+            // float型
+            suggest = trial.suggest_float(item, lower, upper)
+        else:
+            // 型不明
+            continue
+
+        _model_params[item] = suggest
 
     # ベイズ最適化を実行
     study = optuna.create_study(direction = "maximum", sampler = optuna.samplers.TPESampler(seed = seed))
