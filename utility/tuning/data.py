@@ -3,6 +3,7 @@ import pandas
 import sklearn
 import matplotlib
 import optuna
+import pickle
 
 from pandas import Series
 from sklearn.preprocessing import LabelEncoder
