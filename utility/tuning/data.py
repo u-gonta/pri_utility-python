@@ -14,6 +14,9 @@ from matplotlib import pyplot
 
 from utility.plot.learning_rate import draw as draw_learning_rate
 
+# ファイル名
+FILE_NAME = "tuning_model.pickle"
+
 # モデル
 _model = None
 
@@ -84,7 +87,7 @@ def optuna_classifier(
     , seed = 42
     , trials = 600
     , directory = "."
-    , file_name = "tuning_model.pickle"
+    , file_name = FILE_NAME
 ):
 
     # 目的変数をラベル化

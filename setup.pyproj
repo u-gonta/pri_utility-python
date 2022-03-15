@@ -40,6 +40,12 @@
     </Compile>
     <Compile Include="utility\plot\learning_rate.py" />
     <Compile Include="utility\plot\__init__.py" />
+    <Compile Include="utility\predict\data.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utility\predict\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="utility\prepara\data.py">
       <SubType>Code</SubType>
     </Compile>
@@ -69,6 +75,7 @@
     <Folder Include="utility\" />
     <Folder Include="utility\evaluation\" />
     <Folder Include="utility\analisys\" />
+    <Folder Include="utility\predict\" />
     <Folder Include="utility\tuning\" />
     <Folder Include="utility\prepara\" />
     <Folder Include="utility\plot\" />
