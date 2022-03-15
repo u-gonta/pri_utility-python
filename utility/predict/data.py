@@ -16,7 +16,6 @@ def output_file_classifier(
     , y_train
     , id_test
     , x_test
-    , invalids = {}
     , id = ID
     , directory = "."
     , model_file_name = MODEL_FILE_NAME
@@ -26,10 +25,6 @@ def output_file_classifier(
     # 目的変数をラベル化
     encoder = LabelEncoder()
     label = encoder.fit_transform(y_train)
-
-    # 説明変数を絞り込み
-    x_train = x_train.drop(columns = invalids)
-    x_test = x_test.drop(columns = invalids)
 
     # モデルを読み込み
     model = pickle.load(open(directory + "\\" + model_file_name, "rb"))
