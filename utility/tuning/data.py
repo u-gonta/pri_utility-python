@@ -124,7 +124,9 @@ def optuna_classifier(
     best_score = study.best_trial.values
     for key, value in study.best_trial.params.items():
         print("{}:{:.6f}".format(key, value), end = "")
-    print("最適スコア:{:.6f}".format(best_score), end = "")
+    message = "スコア:"
+    message += " ".join([format(score, ".6f") for score in best_score])
+    print(message, end = "")
 
     # 最適パラメータをモデルにセット
     _model.set_params(**best_param)
