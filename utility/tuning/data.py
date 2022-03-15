@@ -37,13 +37,13 @@ def optuna_objective(trial):
     # モデルのパラメータを更新
     global _model_params
     model_params = {}
-    for params in model_params:
+    for key, values in _model_params.items():
         # パラメータの名称
-        item = params[0]
+        item = key
         # パラメータの下限値
-        lower = params[1]
+        lower = values[0]
         # パラメータの上限値
-        upper = params[2]
+        upper = values[1]
         suggest = None
         if type(lower) is int or type(upper) is int:
             # int型
