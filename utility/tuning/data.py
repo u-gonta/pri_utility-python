@@ -150,8 +150,9 @@ def optuna_classifier(
     _model.fit(_x, _y)
 
     # 特徴量の重要度を取得
+    importances = model.feature_importances_
     for (index, name) in enumerate(x.columns):
-        print("{},{:.6f}".format(name, model.feature_importances_[index]), end = "")
+        print("{},{:.6f}".format(name, importances[index]), end = "")
 
     # モデルを保存
     pickle.dump(_model, open(directory + "\\" + file_name, "wb"))
