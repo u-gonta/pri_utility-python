@@ -74,19 +74,19 @@ def classifier(
                     fit_params["eval_metric"] = "multi_logloss"
 
             # クロスバリデーションで評価指標を算出
-            scores = cross_validate(model
-                                    , X = x, y = label
-                                    , scoring = scorings
-                                    , cv = cv
+            scores = cross_validate(model, x, label, scoring = scorings, cv = cv
                                     , fit_params = fit_params)
             results[name] = scores
-
+            print(results[name])
             message = name
             for scoring in scorings:
                 target = "test_" + scoring
                 message += "," + scoring + ":"
+                print(message)
                 message += " ".join([format(score, ".6f") for score in scores[target]])
+                print(message)
                 message += ",平均:{.6f}".format(scores[target].mean())
+                print(message)
             print(message, end = "")
 
         except Exception as e:
