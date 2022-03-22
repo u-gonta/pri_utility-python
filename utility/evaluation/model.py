@@ -51,7 +51,7 @@ def classifier(
                     model = estimator(max_iter = max_iter)
 
             elif name == "xgboost":
-                model = estimator(objective = "binary:logistic")
+                model = estimator(use_label_encoder = False)
 
             else:
                 model = estimator()
@@ -63,12 +63,11 @@ def classifier(
             fit_params = None
             if name == "xgboost" or name == "lightgbm" or name == "catboost":
                 fit_params = {}
-                fit_params["eval_set"] = [(x, label)]
+                #fit_params["eval_set"] = [(x, label)]
                 fit_params["verbose"] = 0
 
                 if name == "xgboost":
-                    fit_params["early_stopping_rounds"] = early_stopping
-                    fit_params["eval_metric"] = "logloss"
+                    fit_params["eval_metric"] = "mlogloss"
 
                 elif name == "lightgbm":
                     fit_params["eval_metric"] = "multi_logloss"
@@ -88,5 +87,14 @@ def classifier(
 
         except Exception as e:
             print(f"{name},エラー:{e}", end = "")
+
+    for (name, scores) in results.items():
+        messag = name
+        for scoring in scorings:
+            target = "test_" + scoring
+            message += "," + scoring + ":"
+            message += " ".join([format(score, ".6f") for score in scores[target]])
+            message += ",平均:{:.6f}".format(scores[target].mean())
+        print(message, end = "")
 
     return results
