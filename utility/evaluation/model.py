@@ -89,7 +89,7 @@ def classifier(
             print(f"{name},エラー:{e}", end = "")
 
     for (name, scores) in results.items():
-        messag = name
+        message = name
         for scoring in scorings:
             target = "test_" + scoring
             message += "," + scoring + ":"
