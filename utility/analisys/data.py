@@ -28,6 +28,9 @@ def classifier(
     encoder = LabelEncoder()
     label = encoder.fit_transform(y)
 
+    # ディレクトリを作成
+    os.makedirs(directory, exist_ok = True)
+
     for i, (name, range) in enumerate(cv_params.items()):
         for scoring in scorings:
             # 検証曲線を取得

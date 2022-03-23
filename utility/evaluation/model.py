@@ -63,7 +63,6 @@ def classifier(
             fit_params = None
             if name == "xgboost" or name == "lightgbm" or name == "catboost":
                 fit_params = {}
-                #fit_params["eval_set"] = [(x, label)]
                 fit_params["verbose"] = 0
 
                 if name == "xgboost":
@@ -73,28 +72,28 @@ def classifier(
                     fit_params["eval_metric"] = "multi_logloss"
 
             # クロスバリデーションで評価指標を算出
-            scores = cross_validate(model, x, label, scoring = scorings, cv = cv
-                                    , fit_params = fit_params)
+            scores = cross_validate(model, x, label, scoring = scorings, cv = cv, fit_params = fit_params)
             results[name] = scores
 
             message = name
+            for scoring in scorings:
+                message += "," + scoring
+            print(message, end = "")
+
+        except Exception as e:
+            results[name] = None
+            print(f"{name},エラー:{e}", end = "")
+
+    for (name, scores) in results.items():
+        message = name
+        if scores is None:
+            message = "エラー"
+        else:
             for scoring in scorings:
                 target = "test_" + scoring
                 message += "," + scoring + ":"
                 message += " ".join([format(score, ".6f") for score in scores[target]])
                 message += ",平均:{:.6f}".format(scores[target].mean())
-            print(message, end = "")
-
-        except Exception as e:
-            print(f"{name},エラー:{e}", end = "")
-
-    for (name, scores) in results.items():
-        message = name
-        for scoring in scorings:
-            target = "test_" + scoring
-            message += "," + scoring + ":"
-            message += " ".join([format(score, ".6f") for score in scores[target]])
-            message += ",平均:{:.6f}".format(scores[target].mean())
         print(message, end = "")
 
     return results
