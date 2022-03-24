@@ -39,7 +39,8 @@ def classifier(
                                                         , param_name = name
                                                         , param_range = range
                                                         , scoring = scoring
-                                                        , cv = cv)
+                                                        , cv = cv
+                                                        , n_jobs = 1)
 
             # 学習率のグラフを描画            
             draw_learning_rate(train_score, valid_score
@@ -50,7 +51,7 @@ def classifier(
             pyplot.savefig(path)
 
     # クロスバリデーションで評価指標を算出
-    scores = cross_validate(model, x, label, scoring = scorings, cv = cv)
+    scores = cross_validate(model, x, label, scoring = scorings, cv = cv, n_jobs = 1)
     for scoring in scorings:
         target = "test_" + scoring
         message = scoring + ",スコア:"

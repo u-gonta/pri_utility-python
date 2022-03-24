@@ -72,7 +72,7 @@ def classifier(
                     fit_params["eval_metric"] = "multi_logloss"
 
             # クロスバリデーションで評価指標を算出
-            scores = cross_validate(model, x, label, scoring = scorings, cv = cv, fit_params = fit_params)
+            scores = cross_validate(model, x, label, scoring = scorings, cv = cv, fit_params = fit_params, n_jobs = 1)
             results[name] = scores
 
             message = name
