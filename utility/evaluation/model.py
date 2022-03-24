@@ -75,19 +75,19 @@ def classifier(
             scores = cross_validate(model, x, label, scoring = scorings, cv = cv, fit_params = fit_params, n_jobs = 1)
             results[name] = scores
 
-            message = name
+            message = "→ " + name
             for scoring in scorings:
                 message += "," + scoring
-            print(message, end = "")
+            print(message)
 
         except Exception as e:
             results[name] = None
-            print(f"{name},エラー:{e}", end = "")
+            print("→ {},エラー:{}".format(name, e))
 
     for (name, scores) in results.items():
         message = name
         if scores is None:
-            message = "エラー"
+            message += ",エラー"
         else:
             for scoring in scorings:
                 target = "test_" + scoring
