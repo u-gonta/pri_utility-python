@@ -41,8 +41,9 @@ def classifier(
                                                         , scoring = scoring
                                                         , cv = cv
                                                         , n_jobs = 1)
+            print("validation_curve,{},{}".format(name, scoring))
 
-            # 学習率のグラフを描画            
+            # 学習率のグラフを描画
             draw_learning_rate(train_score, valid_score
                                 , range = range, x_scale = param_scales[name]
                                 , x_label = name, y_label = scoring)
